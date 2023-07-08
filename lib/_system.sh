@@ -200,6 +200,17 @@ sleep 2
   cat > /etc/nginx/sites-available/${empresa_dominio}-backend << 'END'
 server {
   server_name $backend_hostname;
+
+  proxy_ssl_servername on;
+  underscores_in_headers on;
+
+  proxy_connect_timeout  600;
+  proxy_send_timeout     600;
+  proxy_read_timeout     600;
+  send_timeout           600;
+  client_max_body_size  100M;
+
+  
   location / {
     proxy_pass http://127.0.0.1:${alter_backend_port};
     proxy_http_version 1.1;
@@ -210,8 +221,11 @@ server {
     proxy_set_header X-Forwarded-Proto \$scheme;
     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
     proxy_cache_bypass \$http_upgrade;
+    proxy_socket_keepalive on;
   }
 }
+
+
 END
 ln -s /etc/nginx/sites-available/${empresa_dominio}-backend /etc/nginx/sites-enabled
 EOF
@@ -329,7 +343,7 @@ EOF
 #######################################
 system_puppeteer_dependencies() {
   print_banner
-  printf "${WHITE} 💻 Instalando puppeteer dependencies...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Instalando whaticket dependencies...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
