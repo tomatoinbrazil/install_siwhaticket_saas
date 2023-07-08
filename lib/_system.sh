@@ -311,11 +311,11 @@ EOF
   sleep 2
 }
 #######################################
-# installs docker
+# installs redis
 # Arguments:
 #   None
 #######################################
-system_docker_install() {
+system_redis_install() {
   print_banner
   printf "${WHITE} 💻 Instalando redis...${GRAY_LIGHT}"
   printf "\n\n"
