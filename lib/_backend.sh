@@ -2,11 +2,11 @@
 #
 # functions for setting up app backend
 #######################################
-# creates REDIS db using docker
+# creates POSTGRES db
 # Arguments:
 #   None
 #######################################
-backend_redis_create() {
+backend_postgres_create() {
   print_banner
   printf "${WHITE} 💻 Criando Banco Postgres...${GRAY_LIGHT}"
   printf "\n\n"
