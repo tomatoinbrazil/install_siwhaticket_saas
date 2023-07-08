@@ -91,23 +91,11 @@ sudo su - deploy << EOF
   cat <<[-]EOF > /home/deploy/${instancia_add}/frontend/.env
 REACT_APP_BACKEND_URL=${backend_url}
 REACT_APP_HOURS_CLOSE_TICKETS_AUTO = 24
-[-]EOF
-EOF
-
-  sleep 2
-
-sudo su - deploy << EOF
-  cat <<[-]EOF > /home/deploy/${instancia_add}/frontend/server.js
-//simple express server to run frontend production build;
-const express = require("express");
-const path = require("path");
-const app = express();
-app.use(express.static(path.join(__dirname, "build")));
-app.get("/*", function (req, res) {
-	res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-app.listen(${frontend_port});
-
+REACT_APP_NAME_SYSTEM = "Whaticket SaaS"
+REACT_APP_BACKDROP_LOADING = "linear-gradient(to right, #4572ff , #5e85ff , #C5AEF2)"
+REACT_APP_POWERED_COLOR_LOGIN = "#FFFFFF"
+REACT_APP_POWERED_COLOR_SIGNUP = "#000000"
+SERVER_PORT=${frontend_port})
 [-]EOF
 EOF
 
