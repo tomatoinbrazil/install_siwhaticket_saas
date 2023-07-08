@@ -201,7 +201,7 @@ sleep 2
 server {
   server_name $backend_hostname;
 
-  proxy_ssl_servername on;
+  proxy_ssl_server_name on;
   underscores_in_headers on;
 
   proxy_connect_timeout  600;
