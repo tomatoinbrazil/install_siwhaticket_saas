@@ -62,7 +62,7 @@ frontend_update() {
   npm install
   rm -rf build
   npm run build
-  pm2 start ${empresa_atualizar}-frontend
+  pm2 start ${empresa_atualizar}-frontend --cron-restart="0 6 * * *"
   pm2 save
 EOF
 
@@ -117,6 +117,7 @@ frontend_start_pm2() {
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/frontend
   sudo pm2 start server.js --name ${instancia_add}-frontend
+  sudo pm2 reload ${instancia_add}-frontend --cron-restart="0 6 * * *"
   sudo pm2 save --force
 EOF
 
