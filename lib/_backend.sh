@@ -151,7 +151,7 @@ backend_update() {
   rm -rf dist 
   npm run build
   npx sequelize db:migrate
-  pm2 start ${empresa_atualizar}-backend
+  pm2 start ${empresa_atualizar}-backend --max-memory-restart 300M --cron-restart="0 6 * * *"
   pm2 save 
 EOF
 
@@ -214,6 +214,7 @@ backend_start_pm2() {
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/backend
   sudo pm2 start dist/server.js --name ${instancia_add}-backend
+  pm2 reload ${instancia_add}-backend --max-memory-restart 300M --cron-restart="0 6 * * *"
   sudo pm2 save --force
 EOF
 
