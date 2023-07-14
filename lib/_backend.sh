@@ -82,6 +82,13 @@ USER_LIMIT=10000
 CONNECTIONS_LIMIT=10000
 CLOSED_SEND_BY_ME=true
 
+GERENCIANET_SANDBOX=false
+
+STRIPE_OK_URL=${frontend_url}/financeiro
+STRIPE_CANCEL_URL=${frontend_url}/financeiro
+
+MP_NOTIFICATION_URL=${backend_url}/subscription/mercadopagowebhook
+
 [-]EOF
 EOF
 
