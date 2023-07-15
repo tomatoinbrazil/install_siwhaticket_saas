@@ -57,7 +57,7 @@ frontend_update() {
   sudo su <<EOF
   cd /home/deploy/${empresa_atualizar}
   pm2 stop ${empresa_atualizar}-frontend
-  git pull
+  git pull -f
   cd /home/deploy/${empresa_atualizar}/frontend
   npm install
   rm -rf build
