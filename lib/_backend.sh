@@ -147,7 +147,7 @@ backend_update() {
 
   sleep 2
 
-  sudo su - deploy <<EOF
+  sudo su <<EOF
   cd /home/deploy/${empresa_atualizar}
   pm2 stop ${empresa_atualizar}-backend
   git pull
