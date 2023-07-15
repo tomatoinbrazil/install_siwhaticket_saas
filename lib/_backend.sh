@@ -150,6 +150,7 @@ backend_update() {
   sudo su <<EOF
   cd /home/deploy/${empresa_atualizar}
   pm2 stop ${empresa_atualizar}-backend
+  git reset --hard
   git config --global safe.directory '*'
   git pull -f
   cd /home/deploy/${empresa_atualizar}/backend
