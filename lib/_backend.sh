@@ -150,7 +150,7 @@ backend_update() {
   sudo su <<EOF
   cd /home/deploy/${empresa_atualizar}
   pm2 stop ${empresa_atualizar}-backend
-  git pull
+  git pull -f
   cd /home/deploy/${empresa_atualizar}/backend
   npm install
   npm update -f
