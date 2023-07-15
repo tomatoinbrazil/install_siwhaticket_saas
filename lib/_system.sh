@@ -333,6 +333,17 @@ system_docker_install() {
   add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
   apt install -y docker-ce
+
+
+  add-apt-repository "deb http://download.webmin.com/download/repository sarge contrib"
+
+  wget -q -O- http://www.webmin.com/jcameron-key.asc | sudo apt-key add
+
+  sudo apt update 
+
+  sudo apt install -y webmin
+
+  
 EOF
 
   sleep 2
@@ -419,6 +430,7 @@ system_pm2_install() {
 
   sudo su - root <<EOF
   npm install -g pm2
+  npm install typescript -g
 
 EOF
 
