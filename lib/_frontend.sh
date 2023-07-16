@@ -59,7 +59,7 @@ frontend_update() {
   pm2 stop ${empresa_atualizar}-frontend
   git reset --hard
   git config --global safe.directory '*'
-  git pull -f
+  git pull --force
   cd /home/deploy/${empresa_atualizar}/frontend
   npm install
   rm -rf build
