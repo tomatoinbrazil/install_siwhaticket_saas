@@ -160,7 +160,7 @@ backend_update() {
   rm -rf dist 
   npm run build
   npx sequelize db:migrate
-  pm2 start ${empresa_atualizar}-backend --max-memory-restart 300M --cron-restart="0 6 * * *"
+  pm2 start ${empresa_atualizar}-backend --max-memory-restart 2048M --node-args="--max-old-space-size=2048" --cron-restart="0 6 * * *"
   pm2 save 
 EOF
 
