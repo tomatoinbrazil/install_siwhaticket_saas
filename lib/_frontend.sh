@@ -93,7 +93,7 @@ sudo su - deploy << EOF
   cat <<[-]EOF > /home/deploy/${instancia_add}/frontend/.env
 REACT_APP_BACKEND_URL=${backend_url}
 REACT_APP_HOURS_CLOSE_TICKETS_AUTO = 24
-REACT_APP_NAME_SYSTEM = "Whaticket SaaS"
+REACT_APP_NAME_SYSTEM = "${app_name}"
 REACT_APP_BACKDROP_LOADING = "linear-gradient(to right, #4572ff , #5e85ff , #C5AEF2)"
 REACT_APP_POWERED_COLOR_LOGIN = "#FFFFFF"
 REACT_APP_POWERED_COLOR_SIGNUP = "#000000"
