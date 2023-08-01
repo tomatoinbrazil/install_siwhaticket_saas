@@ -40,6 +40,14 @@ get_max_user() {
   read -p "> " max_user
 }
 
+get_app_name() {
+  
+  print_banner
+  printf "${WHITE} 💻 Informe o nome que a ${instancia_add} terá:${GRAY_LIGHT}"
+  printf "\n\n"
+  read -p "> " app_name
+}
+
 get_frontend_url() {
   
   print_banner
@@ -161,6 +169,7 @@ get_urls() {
   get_instancia_add
   get_max_whats
   get_max_user
+  get_app_name
   get_frontend_url
   get_backend_url
   get_frontend_port
