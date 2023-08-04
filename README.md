@@ -9,6 +9,9 @@ FAZENDO DOWNLOAD DO INSTALADOR & INICIANDO A PRIMEIRA INSTALAÇÃO (USAR SOMENTE
 ```bash
 sudo apt install -y git && git clone https://github.com/xpsnetworks/install_siwhaticket_saas.git install_whaticket && sudo chmod -R 777 install_whaticket  && cd install_whaticket  && sudo ./install_primaria
 ```
+```bash
+sudo apt install -y git && git clone https://github.com/xpsnetworks/install_siwhaticket_saas.git install_whaticket && sudo chmod -R 777 install_whaticket  && cd install_whaticket  && sudo ./install_instancia
+```
 
 ## Requisitos
 
