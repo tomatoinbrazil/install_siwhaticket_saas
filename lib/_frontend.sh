@@ -16,7 +16,7 @@ frontend_node_dependencies() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/frontend
-  npm install
+  npm install --legacy-peer-deps
 EOF
 
   sleep 2
@@ -61,7 +61,7 @@ frontend_update() {
   git config --global safe.directory '*'
   git pull --force
   cd /home/deploy/${empresa_atualizar}/frontend
-  npm install
+  npm install --legacy-peer-deps
   rm -rf build
   npm run build
   pm2 start ${empresa_atualizar}-frontend --cron-restart="0 6 * * *"
