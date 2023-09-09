@@ -157,7 +157,6 @@ backend_update() {
   #git pull -f
   cd /home/deploy/${empresa_atualizar}/backend
   npm install
-  npm update -f
   npm install @types/fs-extra
   rm -rf dist 
   npm run build
