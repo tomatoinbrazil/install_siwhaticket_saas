@@ -68,6 +68,7 @@ DB_PORT=5432
 DB_USER=${instancia_add}
 DB_PASS=${mysql_root_password}
 DB_NAME=${instancia_add}
+DB_TIMEZONE=Europe/Lisbon
 
 MASTER_KEY=
 
